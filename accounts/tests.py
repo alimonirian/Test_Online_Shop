@@ -33,20 +33,24 @@ class SignUpPageTest(TestCase):
 
 
 class LogInPageTest(TestCase):
-    username = 'MyUsername'
-    password = 'MyPassword'
-    email = 'myusername@gmail.com'
-
     def setUp(self):
-        """Set up a user for testing."""
-
-        # Create a user to be used in tests
-        # self.user = User.objects.create_user(username=self.username, email=self.email, password=self.password)
-        user = get_user_model().objects.create_user(
-            self.username,
-            self.password,
-            self.email,
+        self.username = 'MyUsername'
+        self.password = 'MyPassword'
+        self.email = 'myusername@gmail.com'
+        get_user_model().objects.create_user(
+            username=self.username,
+            password=self.password,
+            email=self.email,
         )
+
+    def test_successfully_login(self):
+        response = self.client.post(reverse('login'), {
+            'username': self.username,
+            'password': self.password,
+        }
+                                    )
+        self.assertEqual(response.status_code, 302)
+        self.assertRedirects(response, reverse_lazy('home'))
 
     def test_login_page_url_by_name(self):
         response = self.client.get(reverse('login'))
@@ -65,7 +69,3 @@ class LogInPageTest(TestCase):
         c.login(username=self.username, password=self.password)
         c.logout()
 
-    def test_successfully_login(self):
-        response = self.client.post(reverse_lazy('login'), username=self.username, password=self.password)
-        self.assertEqual(response.status_code, 302)
-        self.assertRedirects(response, reverse_lazy('login'))
