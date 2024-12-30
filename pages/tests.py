@@ -15,6 +15,9 @@ class PublicHomePagesTest(TestCase):
         response = self.client.get(reverse('home'))
         self.assertContains(response, 'Home Page')
 
+    def test_homepage_templates_used(self):
+        response = self.client.get(reverse('home'))
+        self.assertTemplateUsed(response, 'home.html')
 
     def test_aboutus_by_urls_200(self):
         response = self.client.get('/aboutus/')
@@ -27,3 +30,8 @@ class PublicHomePagesTest(TestCase):
     def test_aboutus_content(self):
         response = self.client.get(reverse('aboutus'))
         self.assertContains(response, 'About Us')
+
+    def test_aboutus_templates_used(self):
+        response = self.client.get(reverse('aboutus'))
+        self.assertTemplateUsed(response, 'pages/aboutus.html')
+

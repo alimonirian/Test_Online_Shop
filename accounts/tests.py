@@ -20,7 +20,7 @@ class SignUpPageTest(TestCase):
 
     def test_signup_contain(self):
         response = self.client.get(reverse('signup'))
-        self.assertContains(response, 'Sign Up')
+        self.assertContains(response, 'sign up')
 
     def test_signup_form(self):
         user = get_user_model().objects.create_user(
@@ -30,6 +30,10 @@ class SignUpPageTest(TestCase):
         self.assertEqual(get_user_model().objects.all().count(), 1)
         self.assertEqual(get_user_model().objects.all()[0].username, self.username)
         self.assertEqual(get_user_model().objects.all()[0].email, self.email)
+
+    def test_signup_templates_used(self):
+        response = self.client.get(reverse('signup'))
+        self.assertTemplateUsed(response, 'account/signup.html')
 
 
 class LogInPageTest(TestCase):
@@ -69,3 +73,6 @@ class LogInPageTest(TestCase):
         c.login(username=self.username, password=self.password)
         c.logout()
 
+    def test_login_templates_used(self):
+        response = self.client.get(reverse('login'))
+        self.assertTemplateUsed(response, 'account/login.html')
