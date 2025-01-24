@@ -9,10 +9,10 @@ https://docs.djangoproject.com/en/5.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
-
+import os.path
 from pathlib import Path
 from environs import Env
-
+import os
 #environment variable
 env = Env()
 env.read_env()
@@ -145,7 +145,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
@@ -183,3 +182,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # # EMAIL_HOST_PASSWORD = 'Razeghi888$'
 # EMAIL_HOST_PASSWORD = 'hmxy xuxd ovdc mhyh'
 
+
+# Static file settings
+STATIC_URL = 'static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ] # they are both use to call static files address
+# STATICFILES_DIRS = [str(BASE_DIR.joinpath('static')),]
