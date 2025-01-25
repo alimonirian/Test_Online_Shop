@@ -168,7 +168,6 @@ ACCOUNT_UNIQUE_EMAIL = True
 
 # Crispy forms Setting
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
-
 CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 # All aouth setting
