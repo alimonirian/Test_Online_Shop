@@ -18,6 +18,12 @@ class Product(models.Model):
     def get_absolute_url(self):
         return reverse('product_detail', args=[self.id])
 
+#custom_manager
+# class ActiveCommentsManager(models.Manager):
+#     def get_queryset(self):
+#         return super(ActiveCommentsManager, self).get_queryset().filter(active=True)
+
+
 class ProductComment(models.Model):
     PRODUCT_STRTS=[
         ('1', 'Very Bad'),
@@ -34,5 +40,11 @@ class ProductComment(models.Model):
     stars = models.CharField(max_length=10, choices=PRODUCT_STRTS)
     active = models.BooleanField(default=True)
 
+    #use_custom_manager
+    # objects = models.Manager()
+    # active_comments_manager = ActiveCommentsManager()
+
     def get_absolute_url(self):
         return reverse('product_detail', args=[self.product.id])
+
+

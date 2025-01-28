@@ -24,6 +24,9 @@ class ProductDetailView(generic.DetailView):
         return context
 
 
+
+
+
 class CommentCreateView(generic.CreateView):
     model = ProductComment
     form_class = ProductCommentForm
