@@ -1,4 +1,0 @@
-BBBB BBBB
-BBBBBBBBBB BBB
- gettext(u'Please mial ro bebin:') SSSSSS SSSS SS SSSSSS
-BBBBBBBBBBBBB

@@ -9,7 +9,7 @@
     {% blocktrans with site_name=current_site.name site_domain=current_site.domain %}
 
     Hi from {{ site_name }}!
-    selam dedashe golom age shoma bera ma darkhst daden ro link bezenen ta kar temom bere: {{ activate_url }}
+    hi dear, if you want to active your account in our site please clice on this link: {{ activate_url }}
 
     {% endblocktrans %}
 

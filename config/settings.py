@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 import os.path
+from django.contrib.messages import constants as messages_alert
 from pathlib import Path
 from environs import Env
 import os
@@ -48,6 +49,7 @@ INSTALLED_APPS = [
 
 
     # Third Party App
+    'rosetta',
     'crispy_forms',
     'crispy_bootstrap5',
     'allauth',
@@ -140,11 +142,19 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'fa'
 
+LANGUAGES = (
+    ('en', 'English'),
+    ('fa', 'Persian')
+)
+
+
 TIME_ZONE = 'Asia/Tehran'
 
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
+
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
@@ -190,3 +200,14 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ] # they are both use to call static files address
 # STATICFILES_DIRS = [str(BASE_DIR.joinpath('static')),]
+
+# Messages setting
+MESSAGE_TAGS = {
+    messages_alert.ERROR: "danger",
+}
+
+
+# _base.html Setting
+LOCALE_PATHS = (
+    'templates/locale',
+)

@@ -9,13 +9,14 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-01 22:51+0330\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2025-02-03 22:57+0330\n"
+"Last-Translator:   <ali@amel.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Translated-Using: django-rosetta 0.10.1\n"
 
 #: .\models.py:8
 msgid "Product Title"
@@ -55,7 +56,7 @@ msgstr "معمولی"
 
 #: .\models.py:33
 msgid "Good"
-msgstr "خوب"
+msgstr " خوب"
 
 #: .\models.py:34
 msgid "Very Good"

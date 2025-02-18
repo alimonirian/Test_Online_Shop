@@ -1,17 +1,28 @@
 from django.views import generic
-from django.shortcuts import get_object_or_404,reverse
+from django.shortcuts import get_object_or_404, reverse, render, redirect
+from django.contrib import messages
+from django.contrib.messages.views import SuccessMessageMixin
+from django.urls import reverse, reverse_lazy
+
+
 
 # from . import models
-from .models import Product,ProductComment
+from .models import Product, ProductComment
 from .forms import ProductCommentForm
 
 
 class ProductListView(generic.ListView):
-    # model = models.Product  --- show all of things saved in model
     queryset = Product.objects.filter(active=True) #show evrithing in model if active filds is true
     template_name = 'products/product_list.html'
     context_object_name = 'products'
 
+    # def get(request):
+    #     messages.success(request, "welcome to product page!")
+    #     return render(request, 'products/product_list.html')
+
+    # model = models.Product  --- show all of things saved in model
+    # success_message = "Wellcome to product's part" #this messages use for actual method like delete or create and etc
+    # success_url = reverse_lazy('product_list')
 
 class ProductDetailView(generic.DetailView):
     model = Product
@@ -24,10 +35,7 @@ class ProductDetailView(generic.DetailView):
         return context
 
 
-
-
-
-class CommentCreateView(generic.CreateView):
+class CommentCreateView(generic.CreateView, SuccessMessageMixin):
     model = ProductComment
     form_class = ProductCommentForm
 
@@ -38,7 +46,8 @@ class CommentCreateView(generic.CreateView):
         obj.author = self.request.user
 
         product_id = int(self.kwargs['product_id'])
-        product = get_object_or_404(Product, id= product_id)
+        product = get_object_or_404(Product, id=product_id)
         obj.product = product
 
         return super().form_valid(form)
+
