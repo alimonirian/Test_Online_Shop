@@ -4,12 +4,10 @@ from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse, reverse_lazy
 
-
-
 # from . import models
 from .models import Product, ProductComment
 from .forms import ProductCommentForm
-
+from cart.forms import AddToCartProductForm
 
 class ProductListView(generic.ListView):
     queryset = Product.objects.filter(active=True) #show evrithing in model if active filds is true
@@ -32,6 +30,7 @@ class ProductDetailView(generic.DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['comment_form'] = ProductCommentForm()
+        context['add_to_cart_form'] = AddToCartProductForm()
         return context
 
 
