@@ -17,7 +17,7 @@ class Cart:
 
         self.cart = cart
 
-    def add(self, product, quantity=1):
+    def add(self, product, quantity=1, replace_current_quantity = False):
         """
         add a product to cart
         :param product:
@@ -27,8 +27,10 @@ class Cart:
         product_id = str(product.id)
 
         if product_id not in self.cart:
-            self.cart[product_id] = {'quantity': quantity}
-        else:
+            self.cart[product_id] = {'quantity': 0}
+        if replace_current_quantity:
+            self.cart[product_id]['quantity'] = quantity
+        else :
             self.cart[product_id]['quantity'] += quantity
 
         self.save()
@@ -65,6 +67,7 @@ class Cart:
             cart[str(product.id)]['product_obj'] = product
 
         for item in cart.values():
+            item['total_price']= item['product_obj'].price * item['quantity']
             yield item
 
     def __len__(self):
@@ -76,8 +79,6 @@ class Cart:
 
     def get_total_price(self):
         product_ids = self.cart.keys()
-        products = Product.objects.filter(id__in=product_ids)
-
-        return sum(product.price for product in products)
+        return sum(item['quantity'] * item['product_obj'].price for item in self.cart.values())
 
 
