@@ -3,11 +3,12 @@ from django.shortcuts import get_object_or_404, reverse, render, redirect
 from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse, reverse_lazy
+from django.utils.translation import gettext_lazy as _
 
 # from . import models
 from .models import Product, ProductComment
 from .forms import ProductCommentForm
-from cart.forms import AddToCartProductForm
+# from cart.forms import AddToCartProductForm
 
 class ProductListView(generic.ListView):
     queryset = Product.objects.filter(active=True) #show evrithing in model if active filds is true
@@ -30,7 +31,7 @@ class ProductDetailView(generic.DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['comment_form'] = ProductCommentForm()
-        context['add_to_cart_form'] = AddToCartProductForm()
+        # context['add_to_cart_form'] = AddToCartProductForm()
         return context
 
 
@@ -47,6 +48,8 @@ class CommentCreateView(generic.CreateView, SuccessMessageMixin):
         product_id = int(self.kwargs['product_id'])
         product = get_object_or_404(Product, id=product_id)
         obj.product = product
+
+        messages.success(self.request, _('Comment Successfully Created'))
 
         return super().form_valid(form)
 
