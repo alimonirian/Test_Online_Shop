@@ -99,18 +99,20 @@
                                 <i class="flaticon flaticon-user"></i>
                             </a>
                             <ul class="user-info-menu">
-                                <li>
-                                    <a class="text-right" href="my-account.html">{% trans 'User Cash' %}</a>
-                                </li>
-                                <li>
-                                    <a class="text-right" href="cart.html">{% trans 'Card' %}</a>
-                                </li>
-                                <li>
-                                    <a class="text-right" href="wishlist.html">{% trans 'Favorites' %}</a>
-                                </li>
-                                <li>
-                                    <a class="text-right" href="order-tracking.html">{% trans 'History of wanted' %}</a>
-                                </li>
+                                {% if user.is_authenticated %}
+                                    <li>
+                                        <a class="text-right" href="{% url 'account_logout' %}">{% trans 'Sign Out' %}</a>
+                                    </li>
+                                {% else %}
+
+                                    <li>
+                                        <a class="text-right" href="{% url 'account_login' %}">{% trans 'Login' %}</a>
+                                    </li>
+                                    <li>
+                                        <a class="text-right" href="{% url 'account_signup' %}">{% trans 'Sign Up' %}</a>
+                                    </li>
+                                {% endif %}
+
                             </ul>
                         </li>
                         <li class="header-toolbar__item">
