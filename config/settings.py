@@ -204,6 +204,10 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ] # they are both use to call static files address
 # STATICFILES_DIRS = [str(BASE_DIR.joinpath('static')),]
 
+#media file setting
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
 # Messages setting
 MESSAGE_TAGS = {
     messages_alert.ERROR: "danger",
