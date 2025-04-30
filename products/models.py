@@ -2,6 +2,8 @@ from django.db import models
 from django.shortcuts import reverse
 from django.contrib.auth import get_user_model
 from django.utils.translation import gettext_lazy as _
+from django.utils import timezone
+
 
 
 class Product(models.Model):
@@ -11,7 +13,8 @@ class Product(models.Model):
     active = models.BooleanField(default=True, verbose_name=_('Product Active'))
     image = models.ImageField(upload_to='products/product_image', verbose_name=_('Product Image'), blank=True,)
 
-    datetime_created = models.DateTimeField(auto_now_add=True, verbose_name=_('Product Created'))
+    # datetime_created = models.DateTimeField(auto_now_add=True, verbose_name=_('Product Created'))  #when time created auto add
+    datetime_created = models.DateTimeField(default= timezone.now, verbose_name=_('Product Created')) #to show datepicker on admin panel
     datetime_modified = models.DateTimeField(auto_now=True, verbose_name=_('Product Modified'))
 
     def __str__(self):
