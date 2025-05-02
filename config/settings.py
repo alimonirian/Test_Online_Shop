@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'django.contrib.humanize',
+
     # Third Party App
     'jalali_date',
     'rosetta',
@@ -50,6 +51,7 @@ INSTALLED_APPS = [
     'crispy_bootstrap5',
     'allauth',
     'allauth.account',
+    'ckeditor',
 
 
     # Local - App
@@ -208,6 +210,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ] # they are both use to call static files address
 # STATICFILES_DIRS = [str(BASE_DIR.joinpath('static')),]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 #media file setting
 MEDIA_URL = '/media/'
