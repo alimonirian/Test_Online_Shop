@@ -2,3 +2,4 @@ venv/
 db.sqlite3
 .idea/
 CodingYar.com_django_chapter20_frontfiles/
+staticfiles/
