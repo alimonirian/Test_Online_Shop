@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-23 22:57+0330\n"
+"POT-Creation-Date: 2025-05-03 20:52+0330\n"
 "PO-Revision-Date: 2025-02-10 13:43+0330\n"
 "Last-Translator:   <ali@amel.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -36,15 +36,19 @@ msgid "Contact Us"
 msgstr "ارتباط با ما"
 
 #: .\_base.html:104
-msgid "Logout"
-msgstr "خروج"
+#, fuzzy
+#| msgid "Signup"
+msgid "Sign Out"
+msgstr "ثبت نام"
 
 #: .\_base.html:109
 msgid "Login"
 msgstr "ورود"
 
 #: .\_base.html:112
-msgid "Signup"
+#, fuzzy
+#| msgid "Signup"
+msgid "Sign Up"
 msgstr "ثبت نام"
 
 #: .\account\email\email_confirm.html:6 .\account\email\email_confirm.html:10
@@ -101,6 +105,9 @@ msgstr ""
 #: .\account\email\email_confirmation_subject.txt:3
 msgid "Please mial ro bebin:"
 msgstr ""
+
+#~ msgid "Logout"
+#~ msgstr "خروج"
 
 #~ msgid "User Cash"
 #~ msgstr "حساب کاربری"
