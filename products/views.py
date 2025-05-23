@@ -5,7 +5,7 @@ from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse, reverse_lazy
 from django.utils.translation import gettext_lazy as _
 
-# from . import models
+from . import models
 from .models import Product, ProductComment
 from .forms import ProductCommentForm
 # from cart.forms import AddToCartProductForm

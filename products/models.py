@@ -23,7 +23,7 @@ class Product(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('product_detail', args=[self.id])
+        return reverse('products:product_detail', args=[self.id])
 
 #custom_manager
 # class ActiveCommentsManager(models.Manager):

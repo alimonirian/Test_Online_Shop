@@ -1,0 +1,97 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-19 20:33+0330\n"
+"PO-Revision-Date: 2025-05-19 20:34+0330\n"
+"Last-Translator: علی عامل منیریان <aa.monirian@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Translated-Using: django-rosetta 0.10.1\n"
+
+#: .\models.py:9
+msgid "User"
+msgstr "کاربر"
+
+#: .\models.py:10
+msgid "is Paid"
+msgstr "پرداخت شده است؟"
+
+#: .\models.py:12
+msgid "First Name"
+msgstr "نام"
+
+#: .\models.py:13
+msgid "Last Name"
+msgstr "نام خانوادگی"
+
+#: .\models.py:14
+msgid "Phone Number"
+msgstr "تلفن"
+
+#: .\models.py:15
+msgid "Address"
+msgstr "آدرس"
+
+#: .\models.py:17
+msgid "Created"
+msgstr "تاریخ ایجاد"
+
+#: .\models.py:18
+msgid "Modified"
+msgstr "تاریخ تغییرات"
+
+#: .\models.py:20
+msgid "Order Notes"
+msgstr "توضیحات برای سفارش"
+
+#: .\templates\orders\order_create.html:17
+msgid "Order"
+msgstr "ثبت سفارش"
+
+#: .\templates\orders\order_create.html:80
+msgid "Send"
+msgstr "ارسال"
+
+#: .\templates\orders\order_create.html:93
+msgid "product"
+msgstr "محصول"
+
+#: .\templates\orders\order_create.html:94
+msgid "base price"
+msgstr "قیمت پایه"
+
+#: .\templates\orders\order_create.html:94
+#: .\templates\orders\order_create.html:116
+msgid "$"
+msgstr "تومان"
+
+#: .\templates\orders\order_create.html:95
+msgid "quantity"
+msgstr "تعداد"
+
+#: .\templates\orders\order_create.html:96
+msgid "final price"
+msgstr "قیمت نهایی"
+
+#: .\templates\orders\order_create.html:115
+msgid "Total"
+msgstr "جمع کل خرید"
+
+#: .\views.py:16
+msgid "You have not placed any order"
+msgstr "شما هیچ سفارشی ندارید."
+
+#: .\views.py:43
+msgid "Your order has been placed."
+msgstr "سفارش شما ثبت گردید"

@@ -58,6 +58,8 @@
                                                 <div class="ShoppingYar-product">
                                                     <div class="product-inner">
                                                         <figure class="product-image">
+{#                                                            <a href="{% url 'products:product_detail' product.id %}">#}
+
                                                             <a href="{{ product.get_absolute_url }}">
                                                                 {% if product.image %}
                                                                     <img src="{{ product.image.url }}" alt="Products">
@@ -74,21 +76,21 @@
                                                         </figure>
                                                         <div class="product-info">
                                                             <h3 class="product-title mb--15">
-                                                                <a href="{{ product.get_absolute_url }}">{{ product.title }}</a>
+                                                                <a href=<a href="{{ product.get_absolute_url }}"> {{ product.title }}</a>
                                                             </h3>
                                                             <div class="product-price-wrapper mb--30">
                                                                 <span class="money">{{ product.price|intcomma:False|translate_number }} {% trans '$' %}</span>
                                                             </div>
                                                             <form action="{% url 'cart:cart_add' product.id %}" method="POST">
                                                                 {% csrf_token %}
-                                                                <div class="quantity-wrapper d-flex justify-content-start">
-                                                                    <div class="quantity">
-                                                                        <input type="number" class="quantity-input"
+                                                                <div class="quantity-wrapper">
+{#                                                                    <div class="quantity">#}
+                                                                        <input type="hidden" class="quantity-input"
                                                                                name="quantity" id="qty"
                                                                                value="1"
                                                                                min="1"
                                                                                max="30">
-                                                                    </div>
+{#                                                                    </div>#}
                                                                     <button type="submit"
                                                                             class="btn btn-small btn-bg-red btn-color-white btn-hover-2 ">
                                                                         {% trans 'Add To Cart' %}
@@ -144,34 +146,6 @@
             </div>
         </div>
         <!-- Main Content Wrapper Start -->
-
-        <!-- Footer Start-->
-        <footer class="footer">
-            <div class="footer-top bg-color ptb--50" data-bg-color="#f6f6f6">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-9 text-center">
-                            <div class="footer-widget mb--50">
-                                <div class="textwidget">
-                                    <img src="assets/img/codingyar_logo.png" alt="Logo">
-                                </div>
-                            </div>
-                            <div class="footer-widget mb--50 pb--1">
-                                <ul class="footer-menu">
-                                    <li><a href="">درباره ما</a></li>
-                                    <li><a href="">قوانین و مقررات</a></li>
-                                    <li><a href="">تماس با ما</a></li>
-                                </ul>
-                            </div>
-                            <div class="footer-widget">
-                                Codingyar.com © | all rights reserved
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <!-- Footer End-->
 
         <!-- Search form Popup Start -->
         <div class="searchform__popup" id="searchForm">

@@ -48,9 +48,9 @@
                 <div class="col-xl-9 col-lg-8 col-5 col-xs-0 col-none col-sm-block p-0">
                     <nav class="main-navigation">
                         <div class="site-branding" style="margin-right: 30px;">
-                            <a href="{% url 'product_list' %}" class="logo">
+                            <a href="{% url 'products:product_list' %}" class="logo">
                                 <figure class="logo--normal d-none d-sm-block">
-                                    <img class="px-5" src="assets/img/codingyar_logo.png"
+                                    <img class="px-5" src="{% static 'img/codingyar_logo.png' %}"
                                          style="max-height: 50px; margin-bottom: -15px;" alt="Logo">
                                 </figure>
                             </a>
@@ -58,7 +58,7 @@
                         <div class="mainmenu-nav d-none d-lg-block w-100 pr-3">
                             <ul class="mainmenu d-lg-flex jusity-content-end jusity-content-lg-start pt-4">
                                 <li class="mainmenu__item menu-item-has-children active">
-                                    <a href="{% url 'product_list' %}" class="mainmenu__link">
+                                    <a href="{% url 'products:product_list' %}" class="mainmenu__link">
                                         <span class="mm-text">{% trans 'Home site' %}</span>
                                     </a>
                                 </li>
@@ -150,8 +150,11 @@
 
 
 {% block page_Content %}  {% endblock page_Content %}
-<!-- ************************* JS Files ************************* -->
+
 {% include 'cart/cart_sidebar.html' %}
+{% include 'footer.html' %}
+
+<!-- ************************* JS Files ************************* -->
 <!-- jQuery JS -->
 <script src="{% static 'js/vendor.js' %}"></script>
 
